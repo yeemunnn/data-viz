@@ -48,7 +48,7 @@ d3.csv("data/Latin-America-without-Brazil.csv", function(d) {
             .duration(200)
             .style("opacity", .7)
         tooltip.html(d.data["Country Name"])
-        percent.html((d.data['*1990']*100).toFixed(2)+"%")
+        percent.html((d.data['*2015']*100).toFixed(2)+"%")
     })
     .on("mouseout", function(d) {
       d3.select(this).attr("opacity", 1)
