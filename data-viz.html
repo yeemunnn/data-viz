@@ -12,16 +12,21 @@
       <div class = "title">
           <h1>Forest Area in <br> Latin America <br> and the Caribbean</h1>
         </div>
-        <div class = "body-text">
+        <div class="body-text">
           <p>Latin America and the Caribbean represent approximately 22% of the&nbsp;world’s forests.</p><p>
 The total forest area of this region has&nbsp;been in decline for over a decade. A&nbsp;large proportion of this area is concentrated in a few countries.</p><p>
 Countries like Costa Rica, Dominican Republic and Puerto Rico have been putting in effort to rebuild their forests.
 <p> However, this effort is not reflected in&nbsp;the regional change in forest area. Countries with greater forest areas, like Brazil, have a greater role to play in tackling the issue of deforestation.</p>
           </p>
         </div>
+        <div id="source">
+            Source: <a id="link" href="http://data.worldbank.org/indicator/AG.LND.FRST.K2?end=2015&locations=AG-AR-AW-BS-BB-BZ-BO-BR-VG-KY-CL-CO-CR-CU-CW-DM-DO-EC-SV-GD-GT-GY-HT-HN-JM-MX-NI-PA-PY-PE-PR-MF-SX-KN-LC-VC-TT-SR-TC-UY-VE-VI&start=1990&view=chart">The World Bank: Forest Area (sq. km)</a>
+        </div>
       </div>
     <svg id="canvas" width="960" height="500"></svg>
-    <div class="caption">Latin America and the Caribbean<br> without Brazil in 2015</div>
+  <input class="slider" type="range" id="slider" min="1990" max="2015" value="1990" step="1" onchange="updateYear(this.value)">
+      <div class="year">1990</div>
+  <div class="caption">Forest Area in Latin America <br> and the Caribbean</div>
     <div class="tooltip-container">
         <div class="tooltip">
         </div>
@@ -32,8 +37,25 @@ Countries like Costa Rica, Dominican Republic and Puerto Rico have been putting 
     </div>
   </div>
 
+    <div class="container-inputs">
+        <ul>
+            <li>
+                <input type="radio" id="f-option" name="selector" value="on" checked="checked" onclick="dataSwap(this.value)">
+                <label for="f-option">With Brazil</label>
+
+                <div class="check"></div>
+            </li>
+            <li>
+                <input type="radio" id="s-option" name="selector" value="off" onclick="dataSwap(this.value)">
+                <label for="s-option">Without Brazil</label>
+
+                <div class="check"><div class="inside"></div></div>
+            </li>
+        </ul>
+    </div>
+
     <script src="libs/d3.v4.min.js"></script>
-    <script src="pie_chart.js"></script>
+    <script src="pie_chart2.js"></script>
 
 </body>
 </html>
